@@ -40,6 +40,12 @@ public static void clearSleep()
 // Set enable/disable fire log event (for ios only)
 public static void setLogEnable(bool enable)
 ```
+#### Vungle.cs exposes the following methods:
+```
+//Readonly property that returns string representation of the SDK's and plugin's versions
+public static string VersionInfo
+```
+
 #### Options
 | Key          | Description |
 | :----------- |:----------- |
