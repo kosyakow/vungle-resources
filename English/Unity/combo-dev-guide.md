@@ -42,7 +42,7 @@ public static void setLogEnable(bool enable)
 ```
 #### Vungle.cs exposes the following properties:
 ```
-//Readonly property that returns string representation of the SDK's and plugin's versions
+//Readonly property that returns the plugin and underlying SDK version numbers as a string.
 public static string VersionInfo
 ```
 
