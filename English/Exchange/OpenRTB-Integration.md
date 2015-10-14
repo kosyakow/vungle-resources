@@ -10,6 +10,7 @@ The Vungle exchange supports demand partners to access Vungle Applications suppl
 * Vungle's inventory strictly consists of only Mobile Video In-App Impressions, which are full-screen 100% viewable interstitials
 
 __The following describes the typical flow of a bid request and response:__
+
 1. Vungle SDK send an Ad Request to Vungle Exchange
 2. Vungle Exchange then constructs an OpenRTB bid request object to be sent to DSP's
 3. Vungle makes a HTTP POST request to all DSP partners endpoints 
