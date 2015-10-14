@@ -9,15 +9,19 @@ The Vungle exchange supports demand partners to access Vungle Applications suppl
 * Vungle's OpenRTB spec requires some fields that are optional
 * Vungle's inventory strictly consists of only Mobile Video In-App Impressions, which are full-screen 100% viewable interstitials
 
-___The following describes the typical flow of a bid request and response:___
+__The following describes the typical flow of a bid request and response:__
 1. Vungle SDK send an Ad Request to Vungle Exchange
 2. Vungle Exchange then constructs an OpenRTB bid request object to be sent to DSP's
 3. Vungle makes a HTTP POST request to all DSP partners endpoints 
-  * Auction Timeout for Bid Request: 250ms
 4. Vungle runs their first price auction on all valid responses
-  * Valid Response = Must meet all ad markup SLA's as defined below
 5. The winning bid's ad markup along with Win Notification are returned to the mobile device 
-  * The Win Notification is only fired when the creative is rendered (first frame of video)
+
+### Auction Rules
+___________________________________________________________
+
+* Auction Timeout for Bid Request: __250ms__
+* Auction Responses are parsed, including unwrapping of VAST Wrappers, to validate markup (see below)
+* The Win Notification (_nurl_) is fired from device only when the creative is rendered (first frame of video)
 
 ### Ad Markup SLA's
 ___________________________________________________________
@@ -110,7 +114,7 @@ No Bid Handling methods:
 2. Empty JSON Object
 3. Response with _nbr_ attribute filled in
 
-Auction Rules:
+Auction Caveats:
 
 * Vungle __does not__ support multiple bids in a single response.  If multiple bids are sent, only the first bid will be validated.
 * Vungle __does not__ support sending in the ad markup through the BidResponse _nurl_ field.  
