@@ -174,7 +174,7 @@ Request Example:
     "cat": [
       "IAB1" 
     ],
-    "privacypolicy": 1, // I don't think we need to explose implementation details, but whether the app is COPPA compliant.
+    "privacypolicy": 1, 
     "publisher": {
       "id": "test-pub-app-id", // Vungle App Id
       "name": "test-pub-app-name", // Vungle App Name
@@ -220,17 +220,17 @@ Response Example:
 ```
 {
   "id": "abc-123-456-xyz|1337", // Needs to be same as the bid request ID
-  "bidid": "5508", // Bidder defined ID that will likely be used in macro substitution.
-  "cur": "USD", // Optinal, needs to be the same as bid request currency.
+  "bidid": "5508", // Bidder defined ID that will likely be used in macro substitution
+  "cur": "USD", // Optional
   "seatbid": [
     {
-      "seat": "7735", // Bidder defined seat ID, for now, the first one is the one that will be taken.
+      "seat": "7735", // Bidder defined seat ID
       "bid": [
         {
           "id": "5508", // Bidder bidid
-          "impid": "lol-987-654-321", // Needs to be the same as the imp.id we provide.
-          "price": 500, // Their price in CPM.
-          "adid": "618", // Bidders Ad Id, likely needed during macro substitution.
+          "impid": "lol-987-654-321", // Vungle Imp Id
+          "price": 500, // Price in CPM
+          "adid": "618", // Bidders Ad Id
           "nurl": "http://bidder.com/won?price=${AUCTION_PRICE}", // Win URL
           "adm": "http://bidder.com/vast?id=${AUCTION_ID}" // Ad markup: plain HTTP URL or VAST 1.0/2.0.
         }
