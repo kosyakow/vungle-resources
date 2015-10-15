@@ -62,12 +62,19 @@ public static void playAdEx( Dictionary<string,object> options)
 // Fired when a Vungle ad starts
 public static event Action onAdStartEvent;
 
-// Fired when a Vungle ad finishes
+// Fired when a Vungle ad finishes. This event is deprecated. Please use onAdFinishedEvent instead.
 public static event Action onAdEndEvent;
 
 // Fired when a Vungle ad is cached and ready to be displayed
 public static event Action onCachedAdAvailableEvent;
 
 // Fired when a Vungle video is dismissed. Includes the watched and total duration in milliseconds.
+// This event is deprecated. Please use onAdFinishedEvent instead.
 public static event Action<double,double> onVideoViewEvent;
+
+
+// Fired when a Vungle ad finished and provides the entire information about this event: time watched,   
+// total duration, flag that indicates that an ad is completely viewed and flag that indicates was  
+// call to action clicked or not.  
+public static event Action<AdFinishedEventArgs> onAdFinishedEvent;
 ```
