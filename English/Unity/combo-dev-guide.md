@@ -66,15 +66,21 @@ public static string VersionInfo
 // Fired when a Vungle ad starts
 public static event Action onAdStartedEvent;
 
-// Fired when a Vungle ad finishes
+// Fired when a Vungle ad finishes. This event is deprecated. Please use onAdFinishedEvent instead.
 public static event Action onAdEndedEvent;
 
 // Fired when a Vungle ad is cached and ready to be displayed
 public static event Action onCachedAdAvailableEvent;
 
-// Fired when a Vungle video is dismissed and provides the time watched and total duration in that order.
+// Fired when a Vungle video is dismissed and provides the time watched and total duration in that order.  
+//This event is deprecated. Please use onAdFinishedEvent instead.  
 public static event Action<double,double> onAdViewedEvent;
 
 // Fired when the SDK sends a log event.
 public static event Action<string> onLogEvent;
+
+//Fired when a Vungle ad finished and provides the entire information about this event: time watched,   
+//total duration, flag that indicates that an ad is completely viewed and flag that indicates was  
+//call to action clicked or not.
+public static event Action<AdFinishedEventArgs> onAdFinishedEvent;
 ```
