@@ -79,8 +79,8 @@ public static event Action<double,double> onAdViewedEvent;
 // Fired when the SDK sends a log event.
 public static event Action<string> onLogEvent;
 
-//Fired when a Vungle ad finished and provides the entire information about this event: time watched,   
-//total duration, flag that indicates that an ad is completely viewed and flag that indicates was  
-//call to action clicked or not.
+// Fired when a Vungle ad finished and provides the entire information about this event: time watched,   
+// total duration, flag that indicates that an ad is completely viewed and flag that indicates was  
+// call to action clicked or not.
 public static event Action<AdFinishedEventArgs> onAdFinishedEvent;
 ```
