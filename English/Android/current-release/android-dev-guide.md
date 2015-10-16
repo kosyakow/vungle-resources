@@ -20,7 +20,7 @@ Otherwise, read on!
 
 ## 1. Download the SDK
 
-Next, head [here](https://v.vungle.com/dev/android) to download our SDK. Unzip it.
+Next, head [here](https://v.vungle.com/sdk) to download our SDK. Unzip it.
 
 ## 2. Add VungleSDK To Your Project
 
@@ -41,37 +41,33 @@ If you already including the same versions of any of the above libraries, you do
 
 ```xml
 <manifest>
-
   ...
-  
-  <!-- permissions to download and cache video ads for playback -->
+  <!-- Required permissions to download and cache video ads for playback -->
   <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  ...
   <application>
-  
-    ...
-    
-    <!--
-      Required Activity for playback of Vungle video ads
-    -->
-    <activity
-      android:name="com.vungle.publisher.FullScreenAdActivity"
-      android:configChanges="keyboardHidden|orientation|screenSize"
-      android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
-    
+  ...
+  <!-- Required Activity for playback of Vungle video ads -->
+  <activity
+    android:name="com.vungle.publisher.FullScreenAdActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+	/>
+  ...
   </application>
-  
+  ...
 </manifest>
 ```
 
 ### Google Play Services (Optional)
-Including Google Play Services with your project will allow Vungle to provide a more customized ad experience to the end-user, but it's not required.  We recommend using version 4.0.30 or higher.
+1. Including Google Play Services with your project will allow Vungle to provide a more customized ad experience to the end-user, but it's not required.  We recommend using version 4.0.30 or higher.
 
 http://developer.android.com/google/play-services/setup.html#Setup
 
-2) In your app, ensure that the device has a sufficiently up-to-date version of Google Play Services:
+2. In your app, ensure that the device has a sufficiently up-to-date version of Google Play Services:
 
 http://developer.android.com/google/play-services/setup.html#ensure
 
@@ -157,7 +153,7 @@ public class GameActivity extends android.app.Activity {
 vunglePub.isAdPlayable()
 ```
 
-That's it! Quick start guide complete. Stick around if you'd like to check out some of the ways you can customize the ad experience, but otherwise go forth and monetize!
+That's it, you're on the road to Monetization!
 
 <a name="advancedStartupConfig"></a>
 ## Advanced Settings
