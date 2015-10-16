@@ -219,6 +219,14 @@ private function onAdLog(e:VungleEvent):void
 
 ```
 
+### Getting version information
+You can check the current version of the internal iOS or Android Vungle SDK being used by the extension on this 
+platform and the plugin version:
+
+```as3
+var version:String = Vungle.vungle.getVersionInfo();
+```
+
 ### More options
 
 As you have already seen before, you can pass an object with configuration options when calling `playAd()` method. These are the available properties in `VungleAdConfig`:
