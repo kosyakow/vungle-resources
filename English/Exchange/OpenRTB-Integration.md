@@ -156,9 +156,22 @@ Request Example:
   "imp": [
     {
       "id": "5376606", // A unique ID used to track a single impression in Vungle
-      "video": [
-        "video/mp4" 
-      ],
+      "video":  {
+        "mime": [ "video/mp4" ],
+        "minduration": 5,
+        "maxduration": 30,
+        "protocols": [ 1,2,4,5 ],
+        "w": 1080,
+        "h": 1920,
+        "stardelay": 0,
+        "linearity": 1,
+        "minbitrate": 250,
+        "maxbitrate": 2500,
+        "boxingallowed": 1,
+        "playbackmethod": [ 1,2 ],
+        "delivery": [ 1,2 ],
+        "pos": 7
+      },
       "displaymanager": "Vungle", 
       "displaymanagerver": "test-phone/3.3.1", // Vungle SDK version, e.g. Vungle/3.3.1
       "instl": 1, 
@@ -170,7 +183,7 @@ Request Example:
     "id": "test-pub-app-id", // ID to uniquely identify a publisher application in Vungle.
     "name": "test-pub-app-name", // Name of the publisher app
     "bundle": "com.x.vungle.bundle.id", // Package name
-    "storeurl": "http;//test/pub/app/store",
+    "storeurl": "https://itunes.apple.com/us/app/id1234567?mt=8",
     "cat": [
       "IAB1" 
     ],
@@ -186,17 +199,17 @@ Request Example:
   "device": { 
     "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 8_4 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12H141",
     "geo": { 
-      "lat": 31.19283,
-      "long": 129.99392,
+      "lat": 47.46,
+      "lon": -122.16,
       "type": 1, // OpenRTB 2.3 5.16
       "country": "US",
-      "region": "CA"
+      "region": "KS"
     },
     "dnt": 0,
     "lmt": 0,
     "ip": "192.168.1.1",
     "devicetype": 1,
-    "model": "iPhone 6",
+    "model": "iPhone 7,2",
     "os": "iOS",
     "osv": "8.0",
     "w": 1080,
