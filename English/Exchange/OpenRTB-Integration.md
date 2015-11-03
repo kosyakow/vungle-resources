@@ -157,13 +157,13 @@ Request Example:
     {
       "id": "5376606", // A unique ID used to track a single impression in Vungle
       "video":  {
-        "mime": [ "video/mp4" ],
+        "mimes": [ "video/mp4" ],
         "minduration": 5,
         "maxduration": 30,
         "protocols": [ 1,2,4,5 ],
         "w": 1080,
         "h": 1920,
-        "stardelay": 0,
+        "startdelay": 0,
         "linearity": 1,
         "minbitrate": 250,
         "maxbitrate": 2500,
@@ -201,9 +201,9 @@ Request Example:
     "geo": { 
       "lat": 47.46,
       "lon": -122.16,
-      "type": 1, // OpenRTB 2.3 5.16
-      "country": "US",
-      "region": "KS"
+      "type": 1, 
+      "country": "USA",
+      "region": "WA"
     },
     "dnt": 0,
     "lmt": 0,
@@ -214,7 +214,7 @@ Request Example:
     "osv": "8.0",
     "w": 1080,
     "h": 1920,
-    "js": 1, // @const
+    "js": 1, 
     "language": "en",
     "ifa": "test-ifa"
   },
