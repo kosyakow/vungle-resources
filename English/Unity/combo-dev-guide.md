@@ -69,11 +69,15 @@ public static event Action onAdStartedEvent;
 // Fired when a Vungle ad finishes. This event is deprecated. Please use onAdFinishedEvent instead.
 public static event Action onAdEndedEvent;
 
+// Fired when Vungle ad playability changes.
+public static event Action<bool> adPlayableEvent;
+
 // Fired when a Vungle ad is cached and ready to be displayed
+// This event is deprecated. Please use adPlayableEvent instead.  
 public static event Action onCachedAdAvailableEvent;
 
 // Fired when a Vungle video is dismissed and provides the time watched and total duration in that order.  
-//This event is deprecated. Please use onAdFinishedEvent instead.  
+// This event is deprecated. Please use onAdFinishedEvent instead.  
 public static event Action<double,double> onAdViewedEvent;
 
 // Fired when the SDK sends a log event.
